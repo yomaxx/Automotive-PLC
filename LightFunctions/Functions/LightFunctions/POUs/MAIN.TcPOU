@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="MAIN" Id="{24e85ba3-1a96-4f10-aa46-39ba78acf448}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fbTcpServer 	: FB_TcpServer;
+	SrvNetId		: STRING := '';
+	ServerAddress 	: STRING := '';
+	ServerPort 		: UDINT := 24100;
+	
+	sResponse		: STRING;
+	sCommand		: STRING;
+	bBusy			: BOOL;
+	err				: BOOL;
+	errid			: UDINT;
+	
+//	blinkLeft : BOOL;
+//	blinkRight : BOOL;
+//	lightFront : BOOL;
+//	lightRear : BOOL;
+//	lightBrake : BOOL;
+
+	LightsFront   : BOOL;
+	LightsRear 	: BOOL;
+	LightsBrake	: BOOL;
+	LightsReverse : BOOL;
+    BlinkerLeft     : BOOL;
+    BlinkerRight    : BOOL;
+	
+	test: STRING;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbTcpServer(
+	NetId:= SrvNetId, 
+	ServerAdr:= ServerAddress, 
+	ServerPort:= ServerPort, 
+	sSend := sResponse,
+	sReceive=> sCommand, 
+	bBusy=> bBusy, 
+	err=> err, 
+	errid=> errid);
+	
+	sResponse := sCommand;
+
+//IF sCommand = 'blinker:left' THEN
+//	blinkLeft := TRUE;
+//ELSIF sCommand = 'blinker:right' THEN
+//	blinkRight := TRUE;
+//ELSE
+//	blinkLeft := FALSE;
+//	blinkRight := FALSE;
+//END_IF
+
+IF sCommand = 'blon' THEN	//blinker left on
+    BlinkerLeft    := TRUE;
+    BlinkerRight   := FALSE;
+ELSIF sCommand = 'bloff' THEN	//blinker left off
+    BlinkerLeft    := FALSE;
+    BlinkerRight := FALSE;
+ELSIF sCommand = 'bron' THEN	//blinker right on
+    BlinkerRight   := TRUE;
+    BlinkerLeft    := FALSE;
+ELSIF sCommand = 'broff' THEN	//blinker right off
+    BlinkerRight  := FALSE;
+    BlinkerLeft   := FALSE;
+ELSIF sCommand = 'lon' THEN //lights on
+	LightsFront := TRUE;
+	LightsRear := TRUE;
+ELSIF sCommand = 'loff' THEN	//lights off
+	LightsFront := FALSE;
+	LightsRear := FALSE;
+ELSIF sCommand = 'ron' THEN	//reverse light on
+	LightsReverse := TRUE;
+ELSIF sCommand = 'roff' THEN	//reverse light off
+	LightsReverse := FALSE;
+ELSIF sCommand = 'bon' THEN	//reverse light on
+	LightsBrake := TRUE;
+ELSIF sCommand = 'boff' THEN	//reverse light off
+	LightsBrake := FALSE;
+ELSE
+    BlinkerRight := FALSE;
+    BlinkerLeft  := FALSE;
+
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="16" Count="7" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="26" Count="2" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="58" Count="0" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="67" Count="3" />
+      <LineId Id="72" Count="8" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="91" Count="0" />
+      <LineId Id="97" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="102" Count="0" />
+      <LineId Id="105" Count="1" />
+      <LineId Id="108" Count="2" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="83" Count="3" />
+      <LineId Id="66" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
