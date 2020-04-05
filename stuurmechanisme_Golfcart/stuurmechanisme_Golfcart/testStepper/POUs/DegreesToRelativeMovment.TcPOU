@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="DegreesToRelativeMovment" Id="{cd224430-36b7-483d-b332-e0d072bad6ee}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK DegreesToRelativeMovment
+VAR_INPUT
+	MaxRelativePoint : LREAL;
+	MaxSteeringAngle : INT;
+	Deg : LREAL;
+END_VAR
+VAR_OUTPUT
+	RelativeMovement : LREAL;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF (Deg > 0 OR Deg < 0) THEN
+	RelativeMovement := (MaxRelativePoint/MaxSteeringAngle)*Deg;
+ELSIF (Deg = 0) THEN
+	RelativeMovement := 0;		
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="DegreesToRelativeMovment">
+      <LineId Id="9" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="18" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
