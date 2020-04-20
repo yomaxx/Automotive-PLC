@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="MAIN" Id="{2db006ed-2e8f-4f8a-ade4-51905413193e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	CurrentNum AT%IB10:INT;
+	CurrentVoltage : REAL;
+	
+	Overname : BOOL;
+	Autonoom : BOOL;
+	AutonomousButton : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF Autonoom THEN
+	CurrentVoltage := CurrentNum/6552;
+	Autonoom R= CurrentVoltage > 1;
+END_IF
+Autonoom S= AutonomousButton;]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="25" Count="0" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="26" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
