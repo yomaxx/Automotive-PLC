@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="PositionToDegree" Id="{254cc25f-d883-4ebb-aede-8f10272b5caa}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PositionToDegree
+VAR_INPUT
+	MaxPosition : LREAL;
+	MaxSteeringAngle : INT;
+	Position : LREAL;
+END_VAR
+VAR_OUTPUT
+	Deg : LREAL;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF (Position > 0 OR Position < 0) THEN
+	Deg := (MaxSteeringAngle/MaxPosition)*Position;
+ELSIF (Position = 0) THEN
+	Deg := 0;		
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="PositionToDegree">
+      <LineId Id="9" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="18" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

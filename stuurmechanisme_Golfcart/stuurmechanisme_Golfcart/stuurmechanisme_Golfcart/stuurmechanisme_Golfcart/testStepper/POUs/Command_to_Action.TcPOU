@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="Command_to_Action" Id="{ae358f74-febb-409c-b913-83a08ed40d1a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Command_to_Action
+VAR_INPUT
+	inputString : STRING;
+END_VAR
+VAR_OUTPUT
+	recognitionValue : REAL;
+END_VAR
+VAR
+	putString : STRING;
+	recognitionString : STRING := 'Steer(';
+	stringLength : int;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF FIND(STR1:= inputString  , STR2:= recognitionString ) = 1 THEN
+	putString := DELETE(STR:=inputString , LEN:= 6 , POS:=1 );
+	stringLength := LEN(putstring);
+	putString := DELETE(STR:=putString , LEN:= 1 , POS:= stringLength);
+	recognitionValue := STRING_TO_INT(putString);
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="Command_to_Action">
+      <LineId Id="16" Count="4" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
