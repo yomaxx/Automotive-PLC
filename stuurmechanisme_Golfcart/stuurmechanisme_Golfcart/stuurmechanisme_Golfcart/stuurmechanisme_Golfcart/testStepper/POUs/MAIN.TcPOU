@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="MAIN" Id="{f48db1e3-9dde-48d5-bccc-d0cb3279a1dc}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fbReadXaxisStatus: MC_ReadStatus;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbReadXaxisStatus(
+	Axis:=GVL_NC.stXAxis , 
+	Enable:= GVL_AxisCtr.bXAxisEnable , 
+	Valid=> , 
+	Busy=> , 
+	Error=> , 
+	ErrorID=> , 
+	ErrorStop=> , 
+	Disabled=> , 
+	Stopping=> , 
+	StandStill=> , 
+	DiscreteMotion=> , 
+	ContinuousMotion=> , 
+	SynchronizedMotion=> , 
+	Homing=> , 
+	ConstantVelocity=> , 
+	Accelerating=> , 
+	Decelerating=> , 
+	Status=> GVL_NC.stXaxisStatus);
+	POUNCPowerOn();
+	movements();]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="38" Count="20" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
