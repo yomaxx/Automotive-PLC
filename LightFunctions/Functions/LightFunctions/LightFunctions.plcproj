@@ -29,6 +29,9 @@
     <Compile Include="POUs\FB_TcpServer.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FnR_Switch.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
