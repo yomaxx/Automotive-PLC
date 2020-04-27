@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <GVL Name="GVL_IO" Id="{0a43cdcd-55fe-4a0f-88a5-3a67e9e43f20}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	I_bXAxisLimitSwPos AT %I* : BOOL;
+	I_bXAxisLimitSwNeg AT %I* : BOOL;
+	
+	ResetIn AT %I* : BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
