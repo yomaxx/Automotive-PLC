@@ -51,6 +51,7 @@ END_VAR
 //	blinkLeft := FALSE;
 //	blinkRight := FALSE;
 //END_IF
+FnR_Switch();
 
 IF sCommand = 'blon' THEN	//blinker left on
     BlinkerLeft    := TRUE;
@@ -96,7 +97,9 @@ END_IF]]></ST>
       <LineId Id="58" Count="0" />
       <LineId Id="61" Count="0" />
       <LineId Id="25" Count="0" />
-      <LineId Id="67" Count="3" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="139" Count="0" />
+      <LineId Id="68" Count="2" />
       <LineId Id="72" Count="8" />
       <LineId Id="92" Count="0" />
       <LineId Id="91" Count="0" />
