@@ -42,6 +42,9 @@ END_VAR
 	errid=> errid);
 	
 	sResponse := sCommand;
+	
+	Ping();
+	Pedal();
 
 //IF sCommand = 'blinker:left' THEN
 //	blinkLeft := TRUE;
@@ -88,7 +91,12 @@ END_IF]]></ST>
       <LineId Id="16" Count="7" />
       <LineId Id="2" Count="0" />
       <LineId Id="24" Count="0" />
-      <LineId Id="26" Count="2" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="142" Count="0" />
+      <LineId Id="140" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="139" Count="0" />
+      <LineId Id="28" Count="0" />
       <LineId Id="60" Count="0" />
       <LineId Id="30" Count="0" />
       <LineId Id="59" Count="0" />
