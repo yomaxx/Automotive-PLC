@@ -31,6 +31,11 @@ VAR
 	state				: E_State;
            	
 	timer				: TON;
+	
+	fbLocalTime : FB_LocalSystemTime;
+	iPreviousTime : WORD := 0;
+	SafetyTriggerd : BOOL;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -49,6 +54,23 @@ END_IF
 				
 timer(IN:= , PT:= T#500MS, Q=> , ET=> );
 
+fbLocalTime(
+	sNetId := ,
+	bEnable := TRUE,
+	dwCycle := 10,
+	dwOpt := ,
+	tTimeout := DEFAULT_ADS_TIMEOUT,
+);
+
+	IF fbLocalTime.systemTime.wMilliseconds - iPreviousTime >= 200 THEN	
+		SafetyTriggerd := TRUE;	
+	END_IF
+	
+	IF MAIN.sCommand > '' THEN
+		iPreviousTime := fbLocalTime.systemTime.wMilliseconds;
+		
+	END_IF
+ 
 fbSocketListen(
 		sSrvNetId:= NetId, 
 		sLocalHost:= ServerAdr, 
@@ -149,7 +171,17 @@ END_CASE
     </Implementation>
     <LineIds Name="FB_TcpServer">
       <LineId Id="143" Count="1" />
-      <LineId Id="3" Count="108" />
+      <LineId Id="3" Count="11" />
+      <LineId Id="180" Count="6" />
+      <LineId Id="179" Count="0" />
+      <LineId Id="192" Count="0" />
+      <LineId Id="187" Count="0" />
+      <LineId Id="196" Count="0" />
+      <LineId Id="190" Count="0" />
+      <LineId Id="224" Count="0" />
+      <LineId Id="221" Count="2" />
+      <LineId Id="220" Count="0" />
+      <LineId Id="15" Count="96" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
