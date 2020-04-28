@@ -75,6 +75,7 @@
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="GlobalPOUs" />
+    <Folder Include="TCPIP_POU" />
     <Folder Include="VISUs" />
     <Folder Include="Motion_POUs" />
   </ItemGroup>
