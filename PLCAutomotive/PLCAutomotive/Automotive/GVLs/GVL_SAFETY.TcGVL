@@ -3,7 +3,9 @@
   <GVL Name="GVL_SAFETY" Id="{cb20a1ae-5c2d-4093-bc98-22c75603def5}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	RestartSAFETY AT%Q* : BOOL;
+	RestartSAFETY AT%Q* : BOOL;	
+	SafetyTriggerd : BOOL;
+	LowMode : BOOL;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
