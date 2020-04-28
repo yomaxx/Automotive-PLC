@@ -78,6 +78,9 @@
     <Compile Include="TCPIP_POU\RunTCP.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="TCPIP_POU\SafetyMode.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="TCPIP_POU\TCPTimeOut.TcPOU">
       <SubType>Code</SubType>
     </Compile>

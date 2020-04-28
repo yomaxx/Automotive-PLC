@@ -33,6 +33,8 @@ VAR
 	timer				: TON;
 	
 	
+	
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -51,13 +53,7 @@ END_IF
 				
 timer(IN:= , PT:= T#500MS, Q=> , ET=> );
 
-fbLocalTime(
-	sNetId := ,
-	bEnable := TRUE,
-	dwCycle := 10,
-	dwOpt := ,
-	tTimeout := DEFAULT_ADS_TIMEOUT,
-);
+
  
 fbSocketListen(
 		sSrvNetId:= NetId, 
@@ -160,7 +156,7 @@ END_CASE
     <LineIds Name="FB_TcpServer">
       <LineId Id="143" Count="1" />
       <LineId Id="3" Count="11" />
-      <LineId Id="180" Count="6" />
+      <LineId Id="180" Count="0" />
       <LineId Id="179" Count="0" />
       <LineId Id="15" Count="96" />
       <LineId Id="2" Count="0" />

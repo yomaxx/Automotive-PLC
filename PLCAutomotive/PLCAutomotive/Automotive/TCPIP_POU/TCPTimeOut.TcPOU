@@ -8,7 +8,16 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[	IF fbLocalTime.systemTime.wMilliseconds - iPreviousTime >= 200 THEN	
+      <ST><![CDATA[
+fbLocalTime(
+	sNetId := ,
+	bEnable := TRUE,
+	dwCycle := 10,
+	dwOpt := ,
+	tTimeout := DEFAULT_ADS_TIMEOUT,
+);
+
+	IF fbLocalTime.systemTime.wMilliseconds - iPreviousTime >= 200 THEN	
 		RunTCP.SafetyTriggerd := TRUE;	
 	END_IF
 	
@@ -17,7 +26,11 @@ END_VAR
 	END_IF]]></ST>
     </Implementation>
     <LineIds Name="TCPTimeOut">
-      <LineId Id="6" Count="5" />
+      <LineId Id="26" Count="6" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="7" Count="4" />
       <LineId Id="5" Count="0" />
     </LineIds>
   </POU>
