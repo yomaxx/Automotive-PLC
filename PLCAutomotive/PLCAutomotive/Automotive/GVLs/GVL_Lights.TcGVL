@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <GVL Name="GVL_Lights" Id="{99246799-91e5-44ba-b962-adbcefbfdbfc}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+//	blinkLeft : BOOL;
+//	blinkRight : BOOL;
+//	lightFront : BOOL;
+//	lightRear : BOOL;
+//	lightBrake : BOOL;
+
+	LightsFront 	AT%Q*   : BOOL;
+	LightsRear 		AT%Q*  	: BOOL;
+	LightsBrake 	AT%Q* 	: BOOL;
+	LightsReverse 	AT%Q*  	: BOOL;
+    BlinkerLeft 	AT%Q*  	: BOOL;
+    BlinkerRight 	AT%Q*  	: BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
