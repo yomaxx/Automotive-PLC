@@ -2066,6 +2066,10 @@ Bit1: Value bigger/equal Limit2]]></Comment>
 			<OwnerB Name="TIID^EtherCat (EtherCAT)^Head Unit(EK1100)^Safety PLC (EL6900)">
 				<Link VarA="PlcTask Outputs^GVL_SAFETY.RestartSAFETY" VarB="StandardOutputs^Standard In Var 1"/>
 			</OwnerB>
+			<OwnerB Name="TINC^NC-SteeringAxis SAF^Axes^Axis 1">
+				<Link VarA="PlcTask Inputs^GVL_NC.stXAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_NC.stXAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
 		</OwnerA>
 	</Mappings>
 </TcSmProject>
