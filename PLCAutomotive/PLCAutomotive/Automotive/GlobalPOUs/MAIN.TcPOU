@@ -3,25 +3,29 @@
   <POU Name="MAIN" Id="{f48db1e3-9dde-48d5-bccc-d0cb3279a1dc}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	//if true dan rijdt hij autonoom
-	Autonoom : BOOL;	
+	//autonoom
+	Autonoom : BOOL;
+	SetAutonoom : BOOL;	
 	
-	//voor inleen pedal
+	//voor inleen pedal en rem
+	RemIngedrukt : BOOL;
 	InputNum AT%I* : INT;
-	Percentage : REAL;
+	PercentagePedal : REAL;
 
 	//Voor Motion
 	fbReadXaxisStatus: MC_ReadStatus;
-	
+	triggerAutonoom: F_TRIG;
 	LowMode : BOOL;
 	
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[RunTCP(); //Runs TCP server, lights etc are controlled with this
-
+      <ST><![CDATA[triggerAutonoom(CLK:= SetAutonoom, Q=> );
+Autonoom S= TriggerAutonoom.Q;
 IF Autonoom THEN
 	Percentage := Scaling(Input:= InputNum, Imin:= 0, Imax:= 32767, Qmin:= 0, Qmax:= 100);
+  Autonoom R= RemIngedrukt OR PercentagePedal > 10;
 END_IF
 
 IF LowMode THEN // als lowmode aan is, is maximum throtthe 50%
@@ -49,6 +53,7 @@ fbReadXaxisStatus(
       <LineId Id="90" Count="0" />
       <LineId Id="64" Count="0" />
       <LineId Id="77" Count="0" />
+      <LineId Id="90" Count="0" />
       <LineId Id="71" Count="0" />
       <LineId Id="148" Count="0" />
       <LineId Id="136" Count="2" />
