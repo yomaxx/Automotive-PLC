@@ -26,10 +26,11 @@ fbLocalTime(
 	END_IF]]></ST>
     </Implementation>
     <LineIds Name="TCPTimeOut">
-      <LineId Id="18" Count="6" />
+      <LineId Id="26" Count="6" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="33" Count="0" />
       <LineId Id="17" Count="0" />
-      <LineId Id="25" Count="0" />
-      <LineId Id="6" Count="5" />
+      <LineId Id="7" Count="4" />
       <LineId Id="5" Count="0" />
     </LineIds>
   </POU>

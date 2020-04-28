@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="SafetyMode" Id="{f3338e28-180f-4591-ab90-39c1de9b87e9}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM SafetyMode
+VAR
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF RunTCP.sCommand = 'HIGHMODE' THEN
+	MAIN.LowMode := FALSE;
+END_IF
+	
+ 
+	]]></ST>
+    </Implementation>
+    <LineIds Name="SafetyMode">
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
