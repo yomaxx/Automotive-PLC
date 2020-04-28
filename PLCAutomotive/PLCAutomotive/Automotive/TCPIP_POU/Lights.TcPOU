@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="Lights" Id="{40b29097-741a-4b94-8274-639146bd4105}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Lights
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF RunTCP.sCommand = 'blon' THEN	//blinker left on
+    RunTCP.BlinkerLeft    := TRUE;
+    RunTCP.BlinkerRight   := FALSE;
+ELSIF RunTCP.sCommand = 'bloff' THEN	//blinker left off
+    RunTCP.BlinkerLeft    := FALSE;
+    RunTCP.BlinkerRight := FALSE;
+ELSIF RunTCP.sCommand = 'bron' THEN	//blinker right on
+    RunTCP.BlinkerRight   := TRUE;
+    RunTCP.BlinkerLeft    := FALSE;
+ELSIF RunTCP.sCommand = 'broff' THEN	//blinker right off
+    RunTCP.BlinkerRight  := FALSE;
+    RunTCP.BlinkerLeft   := FALSE;
+ELSIF RunTCP.sCommand = 'lon' THEN //lights on
+	RunTCP.LightsFront := TRUE;
+	RunTCP.LightsRear := TRUE;
+ELSIF RunTCP.sCommand = 'loff' THEN	//lights off
+	RunTCP.LightsFront := FALSE;
+	RunTCP.LightsRear := FALSE;
+ELSIF RunTCP.sCommand = 'ron' THEN	//reverse light on
+	RunTCP.LightsReverse := TRUE;
+ELSIF RunTCP.sCommand = 'roff' THEN	//reverse light off
+	RunTCP.LightsReverse := FALSE;
+ELSIF RunTCP.sCommand = 'bon' THEN	//reverse light on
+	RunTCP.LightsBrake := TRUE;
+ELSIF RunTCP.sCommand = 'boff' THEN	//reverse light off
+	RunTCP.LightsBrake := FALSE;
+ELSE
+    RunTCP.BlinkerRight := FALSE;
+    RunTCP.BlinkerLeft  := FALSE;
+
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="Lights">
+      <LineId Id="6" Count="29" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

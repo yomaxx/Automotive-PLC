@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="Scaling" Id="{66bf3739-5431-4fc7-96ca-4ae20f49e9c6}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION Scaling : REAL
+VAR_INPUT
+	Input : INT;
+	Imin : REAL;
+	Imax : REAL;
+	Qmin : REAL;
+	Qmax : REAL;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	schaalfactor : REAL;
+	offset : REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[schaalfactor := (Qmax - Qmin)/(Imax - Imin);
+offset := Qmin - (Imin*schaalfactor);
+Scaling := (schaalfactor * Input + offset);]]></ST>
+    </Implementation>
+    <LineIds Name="Scaling">
+      <LineId Id="20" Count="1" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

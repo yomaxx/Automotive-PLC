@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="TCPTimeOut" Id="{e0e15d90-c382-4ea1-a8cf-110410e3e3f5}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM TCPTimeOut
+VAR
+	fbLocalTime : FB_LocalSystemTime;
+	iPreviousTime : WORD := 0;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+fbLocalTime(
+	sNetId := ,
+	bEnable := TRUE,
+	dwCycle := 10,
+	dwOpt := ,
+	tTimeout := DEFAULT_ADS_TIMEOUT,
+);
+
+	IF fbLocalTime.systemTime.wMilliseconds - iPreviousTime >= 200 THEN	
+		RunTCP.SafetyTriggerd := TRUE;	
+	END_IF
+	
+	IF RunTCP.sCommand > '' THEN
+		iPreviousTime := fbLocalTime.systemTime.wMilliseconds;
+	END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="TCPTimeOut">
+      <LineId Id="26" Count="6" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="7" Count="4" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
