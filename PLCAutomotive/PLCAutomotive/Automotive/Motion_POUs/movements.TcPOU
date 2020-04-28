@@ -605,7 +605,7 @@ END_VAR
                       <l2 n="InputItems" cet="BoxTreeOperand">
                         <o>
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"RunTCP.sCommand"</v>
+                            <v n="Operand">""</v>
                             <v n="Type">"STRING"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>

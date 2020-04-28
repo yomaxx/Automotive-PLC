@@ -1956,6 +1956,8 @@
                 <v>389b62ec-3eb2-4bb6-a734-ba3816d26137</v>
                 <v>GetClientData</v>
                 <v>a91527e0-4e4b-4f21-8621-b02f08fba4b0</v>
+                <v>Destruct</v>
+                <v>2041aeb3-89a0-4a0f-b1c4-a949af72821e</v>
                 <v>Paint</v>
                 <v>52eb5235-362e-4a27-a75e-a32bd770cc4d</v>
                 <v>GetElementArray</v>
@@ -1976,8 +1978,6 @@
                 <v>47a34d24-7a36-47f6-aad1-8be200bab565</v>
                 <v>GetSurroundingRect</v>
                 <v>cc4ec518-4f14-427c-951a-1789d11c72d1</v>
-                <v>ElementInfo</v>
-                <v>15c2ed84-f637-4e32-bede-7623f88f91cb</v>
                 <v>GetResult</v>
                 <v>5f39e372-a08b-4ea5-bf08-a61f1dc9df12</v>
                 <v>GetLocalUsergroup</v>
@@ -2000,8 +2000,8 @@
                 <v>5444eb8d-96da-4745-987d-d5d065c982f3</v>
                 <v>HandleInput</v>
                 <v>dcea4bd8-df95-4089-92cd-ad2c4a498de1</v>
-                <v>Destruct</v>
-                <v>2041aeb3-89a0-4a0f-b1c4-a949af72821e</v>
+                <v>ElementInfo</v>
+                <v>15c2ed84-f637-4e32-bede-7623f88f91cb</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{874346f2-d8fd-4506-a2c5-a06924bc3234}</v>
@@ -2014,10 +2014,10 @@
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
                 <v>FB_Init</v>
                 <v>cd92a424-e50f-4809-9b65-eee37b67ffc0</v>
-                <v>FB_Exit</v>
-                <v>45f5f73e-402d-4c36-862c-7a324efd3dec</v>
                 <v>FB_Reinit</v>
                 <v>86646580-57ad-4ccf-bcd0-249a34d04442</v>
+                <v>FB_Exit</v>
+                <v>45f5f73e-402d-4c36-862c-7a324efd3dec</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{f8555635-97c3-4f7b-8eb6-d24a63d0996c}</v>
