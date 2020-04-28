@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="peddal" Id="{8d2bd18b-9383-4735-8d16-06e116df72cb}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM peddal
+VAR
+	//autonoom
+	Autonoom : BOOL;
+	SetAutonoom : BOOL;	
+	
+	//voor inleen pedal en rem
+	RemIngedrukt : BOOL;
+	InputNum AT%I* : INT;
+	PercentagePedal : REAL;
+
+	//Voor Motion
+	fbReadXaxisStatus: MC_ReadStatus;
+	triggerAutonoom: F_TRIG;
+	LowMode : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[   triggerAutonoom(CLK:= SetAutonoom, Q=> );
+Autonoom S= TriggerAutonoom.Q;
+IF Autonoom THEN
+	PercentagePedal := Scaling(Input:= InputNum, Imin:= 0, Imax:= 32767, Qmin:= 0, Qmax:= 100);
+  Autonoom R= RemIngedrukt OR PercentagePedal > 10;
+END_IF
+
+IF LowMode THEN // als lowmode aan is, is maximum throtthe 50%
+		IF PercentagePedal > 50 THEN
+			PercentagePedal := 50;
+		END_IF
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="peddal">
+      <LineId Id="21" Count="10" />
+      <LineId Id="19" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
