@@ -14,7 +14,8 @@ VAR
 	err				: BOOL;
 	errid			: UDINT;
 	
-	(*
+	SafetyTriggerd : BOOL;
+	
 //	blinkLeft : BOOL;
 //	blinkRight : BOOL;
 //	lightFront : BOOL;
@@ -26,7 +27,7 @@ VAR
 	LightsBrake	: BOOL;
 	LightsReverse : BOOL;
     BlinkerLeft     : BOOL;
-    BlinkerRight    : BOOL;*)
+    BlinkerRight    : BOOL;
 	
 END_VAR]]></Declaration>
     <Implementation>

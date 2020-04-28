@@ -7,34 +7,34 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF RunTCP.sCommand = 'blon' THEN	//blinker left on
-    GVL_Lights.BlinkerLeft    := TRUE;
-    GVL_Lights.BlinkerRight   := FALSE;
+    RunTCP.BlinkerLeft    := TRUE;
+    RunTCP.BlinkerRight   := FALSE;
 ELSIF RunTCP.sCommand = 'bloff' THEN	//blinker left off
-    GVL_Lights.BlinkerLeft    := FALSE;
-    GVL_Lights.BlinkerRight := FALSE;
+    RunTCP.BlinkerLeft    := FALSE;
+    RunTCP.BlinkerRight := FALSE;
 ELSIF RunTCP.sCommand = 'bron' THEN	//blinker right on
-    GVL_Lights.BlinkerRight   := TRUE;
-    GVL_Lights.BlinkerLeft    := FALSE;
+    RunTCP.BlinkerRight   := TRUE;
+    RunTCP.BlinkerLeft    := FALSE;
 ELSIF RunTCP.sCommand = 'broff' THEN	//blinker right off
-    GVL_Lights.BlinkerRight  := FALSE;
-    GVL_Lights.BlinkerLeft   := FALSE;
+    RunTCP.BlinkerRight  := FALSE;
+    RunTCP.BlinkerLeft   := FALSE;
 ELSIF RunTCP.sCommand = 'lon' THEN //lights on
-	GVL_Lights.LightsFront := TRUE;
-	GVL_Lights.LightsRear := TRUE;
+	RunTCP.LightsFront := TRUE;
+	RunTCP.LightsRear := TRUE;
 ELSIF RunTCP.sCommand = 'loff' THEN	//lights off
-	GVL_Lights.LightsFront := FALSE;
-	GVL_Lights.LightsRear := FALSE;
+	RunTCP.LightsFront := FALSE;
+	RunTCP.LightsRear := FALSE;
 ELSIF RunTCP.sCommand = 'ron' THEN	//reverse light on
-	GVL_Lights.LightsReverse := TRUE;
+	RunTCP.LightsReverse := TRUE;
 ELSIF RunTCP.sCommand = 'roff' THEN	//reverse light off
-	GVL_Lights.LightsReverse := FALSE;
+	RunTCP.LightsReverse := FALSE;
 ELSIF RunTCP.sCommand = 'bon' THEN	//reverse light on
-	GVL_Lights.LightsBrake := TRUE;
+	RunTCP.LightsBrake := TRUE;
 ELSIF RunTCP.sCommand = 'boff' THEN	//reverse light off
-	GVL_Lights.LightsBrake := FALSE;
+	RunTCP.LightsBrake := FALSE;
 ELSE
-    GVL_Lights.BlinkerRight := FALSE;
-    GVL_Lights.BlinkerLeft  := FALSE;
+    RunTCP.BlinkerRight := FALSE;
+    RunTCP.BlinkerLeft  := FALSE;
 
 END_IF]]></ST>
     </Implementation>

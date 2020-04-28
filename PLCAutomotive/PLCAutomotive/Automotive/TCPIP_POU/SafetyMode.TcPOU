@@ -8,9 +8,9 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF RunTCP.sCommand = 'HIGHMODE' THEN
-	GVL_SAFETY.LowMode := FALSE;
+	MAIN.LowMode := FALSE;
 ELSIF RunTCP.sCommand = 'LOWMODE' THEN
-	GVL_SAFETY.LowMode := TRUE;
+	MAIN.LowMode := TRUE;
 END_IF
 	
  

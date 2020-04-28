@@ -18,7 +18,7 @@ fbLocalTime(
 );
 
 	IF fbLocalTime.systemTime.wMilliseconds - iPreviousTime >= 200 THEN	
-		GVL_SAFETY.SafetyTriggerd := TRUE;	
+		RunTCP.SafetyTriggerd := TRUE;	
 	END_IF
 	
 	IF RunTCP.sCommand > '' THEN

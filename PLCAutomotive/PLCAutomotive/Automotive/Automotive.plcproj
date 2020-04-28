@@ -37,10 +37,6 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
-    <Compile Include="GVLs\GVL_Lights.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
     <Compile Include="GVLs\GVL_NC.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -94,7 +90,7 @@
     <Compile Include="VISUs\ImagePool.TcIPO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VISUs\testLights.TcVIS">
+    <Compile Include="VISUs\Lights.TcVIS">
       <SubType>Code</SubType>
       <DependentUpon>Visualization Manager.TcVMO</DependentUpon>
     </Compile>
@@ -191,11 +187,6 @@
     <None Include="Automotive.tmc">
       <SubType>Content</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <LibraryReference Include="VisuSymbols,3.5.10.0,System">
-      <Namespace>VisuSymbols</Namespace>
-    </LibraryReference>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
