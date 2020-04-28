@@ -9,6 +9,8 @@ END_VAR
     <Implementation>
       <ST><![CDATA[IF RunTCP.sCommand = 'HIGHMODE' THEN
 	MAIN.LowMode := FALSE;
+ELSIF RunTCP.sCommand = 'LOWMODE' THEN
+	MAIN.LowMode := TRUE;
 END_IF
 	
  
@@ -17,6 +19,7 @@ END_IF
     <LineIds Name="SafetyMode">
       <LineId Id="7" Count="0" />
       <LineId Id="9" Count="0" />
+      <LineId Id="18" Count="1" />
       <LineId Id="13" Count="0" />
       <LineId Id="10" Count="0" />
       <LineId Id="8" Count="0" />
