@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="MAIN" Id="{f48db1e3-9dde-48d5-bccc-d0cb3279a1dc}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	//if true dan rijdt hij autonoom
+	Autonoom : BOOL;	
+	
+	//voor inleen pedal
+	InputNum AT%I* : INT;
+	Percentage : REAL;
+
+	//Voor Motion
+	fbReadXaxisStatus: MC_ReadStatus;	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF Autonoom THEN
+	Percentage := Scaling(Input:= InputNum, Imin:= 0, Imax:= 32767, Qmin:= 0, Qmax:= 100);
+END_IF
+
+fbReadXaxisStatus(
+	Axis:=GVL_NC.stXAxis , 
+	Enable:= GVL_AxisCtr.bXAxisEnable , 
+	Valid=> , Busy=> , Error=> , 
+	ErrorID=> , ErrorStop=> , 
+	Disabled=> , Stopping=> , 
+	StandStill=> , DiscreteMotion=> , 
+	ContinuousMotion=> , SynchronizedMotion=> , 
+	Homing=> , ConstantVelocity=> , 
+	Accelerating=> , Decelerating=> , 
+	Status=> GVL_NC.stXaxisStatus);
+	POUNCPowerOn();
+	movements();]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="64" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="38" Count="3" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="56" Count="2" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
