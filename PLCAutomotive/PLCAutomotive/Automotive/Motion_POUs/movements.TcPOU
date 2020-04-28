@@ -514,7 +514,7 @@ END_VAR
                         <o>
                           <o n="Operand" t="Operand">
                             <v n="Operand">"Command_to_Action_0.recognitionValue"</v>
-                            <v n="Type">"INT"</v>
+                            <v n="Type">"REAL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>

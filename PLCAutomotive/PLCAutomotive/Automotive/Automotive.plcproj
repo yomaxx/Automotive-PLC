@@ -17,6 +17,9 @@
     <LibraryReferences>{1472e558-6dca-4f18-af39-362cac981faf}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Autonoom_POU\peddal.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\E_State.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -107,6 +110,7 @@
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="GlobalPOUs" />
+    <Folder Include="Autonoom_POU" />
     <Folder Include="TCPIP_POU" />
     <Folder Include="VISUs" />
     <Folder Include="Motion_POUs" />
