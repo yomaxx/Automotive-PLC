@@ -45,13 +45,15 @@ END_VAR]]></Declaration>
 	TCPTimeOut();
 	Lights();
 	FnR_Switch();
-	SafetyMode();]]></ST>
+	SafetyMode();
+	GetSpeedSteer();]]></ST>
     </Implementation>
     <LineIds Name="RunTCP">
       <LineId Id="32" Count="10" />
       <LineId Id="45" Count="0" />
       <LineId Id="87" Count="2" />
       <LineId Id="118" Count="0" />
+      <LineId Id="146" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

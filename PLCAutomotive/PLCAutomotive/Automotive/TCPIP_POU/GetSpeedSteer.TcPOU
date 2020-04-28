@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="GetSpeedSteer" Id="{878004fa-332a-49b4-9634-12c0e2cc0141}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM GetSpeedSteer
+VAR
+	steerString : STRING;
+	pedalString : STRING;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF FIND(STR1:= 'Steer', STR2:= RunTCP.sCommand) = 1 THEN
+	steerString := RunTCP.sCommand;
+ELSIF FIND(STR1:= 'Throttle', STR2:= RunTCP.sCommand) = 1 THEN
+	pedalString := RunTCP.sCommand;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="GetSpeedSteer">
+      <LineId Id="7" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="14" Count="1" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
