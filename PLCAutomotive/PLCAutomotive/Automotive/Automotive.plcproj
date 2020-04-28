@@ -17,6 +17,9 @@
     <LibraryReferences>{1472e558-6dca-4f18-af39-362cac981faf}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\E_State.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GlobalPOUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -61,6 +64,21 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Motion_POUs\Torque_reading.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TCPIP_POU\FB_TcpServer.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TCPIP_POU\FnR_Switch.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TCPIP_POU\Lights.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TCPIP_POU\RunTCP.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TCPIP_POU\TCPTimeOut.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Visualization Manager.TcVMO">
@@ -137,6 +155,14 @@
     <PlaceholderReference Include="Tc2_System">
       <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_System</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_TcpIp">
+      <DefaultResolution>Tc2_TcpIp, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_TcpIp</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_Utilities">
+      <DefaultResolution>Tc2_Utilities, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Utilities</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc3_Module">
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>

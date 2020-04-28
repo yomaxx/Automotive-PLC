@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="RunTCP" Id="{807811c6-709a-444f-a511-9b1280f909c8}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM RunTCP
+VAR
+	fbTcpServer 	: FB_TcpServer;
+	SrvNetId		: STRING := '';
+	ServerAddress 	: STRING := '';
+	ServerPort 		: UDINT := 24100;
+	
+	sResponse		: STRING;
+	sCommand		: STRING;
+	bBusy			: BOOL;
+	err				: BOOL;
+	errid			: UDINT;
+	
+	SafetyTriggerd : BOOL;
+	
+//	blinkLeft : BOOL;
+//	blinkRight : BOOL;
+//	lightFront : BOOL;
+//	lightRear : BOOL;
+//	lightBrake : BOOL;
+
+	LightsFront   : BOOL;
+	LightsRear 	: BOOL;
+	LightsBrake	: BOOL;
+	LightsReverse : BOOL;
+    BlinkerLeft     : BOOL;
+    BlinkerRight    : BOOL;
+	
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbTcpServer(
+	NetId:= SrvNetId, 
+	ServerAdr:= ServerAddress, 
+	ServerPort:= ServerPort, 
+	sSend := sResponse,
+	sReceive=> sCommand, 
+	bBusy=> bBusy, 
+	err=> err, 
+	errid=> errid);
+	
+	sResponse := sCommand;
+	
+	TCPTimeOut();
+	Lights();
+	FnR_Switch();]]></ST>
+    </Implementation>
+    <LineIds Name="RunTCP">
+      <LineId Id="32" Count="10" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="87" Count="2" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

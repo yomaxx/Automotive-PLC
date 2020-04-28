@@ -15,7 +15,9 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF Autonoom THEN
+      <ST><![CDATA[RunTCP(); //Runs TCP server, lights etc are controlled with this
+
+IF Autonoom THEN
 	Percentage := Scaling(Input:= InputNum, Imin:= 0, Imax:= 32767, Qmin:= 0, Qmax:= 100);
 END_IF
 
@@ -34,6 +36,8 @@ fbReadXaxisStatus(
 	movements();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="91" Count="0" />
+      <LineId Id="90" Count="0" />
       <LineId Id="64" Count="0" />
       <LineId Id="77" Count="0" />
       <LineId Id="71" Count="0" />
