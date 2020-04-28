@@ -13,16 +13,25 @@ VAR
 	PercentagePedal : REAL;
 
 	//Voor Motion
-	fbReadXaxisStatus: MC_ReadStatus;	
+	fbReadXaxisStatus: MC_ReadStatus;
 	triggerAutonoom: F_TRIG;
+	LowMode : BOOL;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
+      <ST><![CDATA[RunTCP(); //Runs TCP server, lights etc are controlled with this
       <ST><![CDATA[triggerAutonoom(CLK:= SetAutonoom, Q=> );
 Autonoom S= TriggerAutonoom.Q;
 IF Autonoom THEN
-	PercentagePedal := Scaling(Input:= InputNum, Imin:= 0, Imax:= 32767, Qmin:= 0, Qmax:= 100);
-	Autonoom R= RemIngedrukt OR PercentagePedal > 10;
+	Percentage := Scaling(Input:= InputNum, Imin:= 0, Imax:= 32767, Qmin:= 0, Qmax:= 100);
+  Autonoom R= RemIngedrukt OR PercentagePedal > 10;
+END_IF
+
+IF LowMode THEN // als lowmode aan is, is maximum throtthe 50%
+		IF percentage > 50 THEN
+			percentage := 50;
+		END_IF
 END_IF
 
 fbReadXaxisStatus(
@@ -40,13 +49,17 @@ fbReadXaxisStatus(
 	movements();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="94" Count="0" />
-      <LineId Id="96" Count="0" />
+      <LineId Id="91" Count="0" />
+      <LineId Id="90" Count="0" />
       <LineId Id="64" Count="0" />
       <LineId Id="77" Count="0" />
       <LineId Id="90" Count="0" />
       <LineId Id="71" Count="0" />
+      <LineId Id="148" Count="0" />
+      <LineId Id="136" Count="2" />
       <LineId Id="65" Count="0" />
+      <LineId Id="139" Count="0" />
+      <LineId Id="149" Count="0" />
       <LineId Id="38" Count="3" />
       <LineId Id="44" Count="0" />
       <LineId Id="46" Count="0" />
