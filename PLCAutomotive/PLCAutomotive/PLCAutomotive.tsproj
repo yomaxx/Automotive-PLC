@@ -1409,6 +1409,11 @@ External Setpoint Generation:
 	</ImageDatas>
 	<Project ProjectGUID="{D236F80B-8C0B-4C5D-B724-9A627390A74D}" Target64Bit="true" ShowHideConfigurations="#x106">
 		<System>
+			<Licenses>
+				<Target>
+					<ManualSelect>{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</ManualSelect>
+				</Target>
+			</Licenses>
 			<Tasks>
 				<Task Id="5" Priority="21" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>

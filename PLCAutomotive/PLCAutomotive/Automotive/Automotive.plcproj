@@ -79,6 +79,9 @@
     <Compile Include="TCPIP_POU\FnR_Switch.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="TCPIP_POU\GetSpeedSteer.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="TCPIP_POU\Lights.TcPOU">
       <SubType>Code</SubType>
     </Compile>
