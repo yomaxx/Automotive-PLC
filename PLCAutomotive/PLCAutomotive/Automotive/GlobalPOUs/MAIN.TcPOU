@@ -3,20 +3,26 @@
   <POU Name="MAIN" Id="{f48db1e3-9dde-48d5-bccc-d0cb3279a1dc}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	//if true dan rijdt hij autonoom
-	Autonoom : BOOL;	
+	//autonoom
+	Autonoom : BOOL;
+	SetAutonoom : BOOL;	
 	
-	//voor inleen pedal
+	//voor inleen pedal en rem
+	RemIngedrukt : BOOL;
 	InputNum AT%I* : INT;
-	Percentage : REAL;
+	PercentagePedal : REAL;
 
 	//Voor Motion
 	fbReadXaxisStatus: MC_ReadStatus;	
+	triggerAutonoom: F_TRIG;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF Autonoom THEN
-	Percentage := Scaling(Input:= InputNum, Imin:= 0, Imax:= 32767, Qmin:= 0, Qmax:= 100);
+      <ST><![CDATA[triggerAutonoom(CLK:= SetAutonoom, Q=> );
+Autonoom S= TriggerAutonoom.Q;
+IF Autonoom THEN
+	PercentagePedal := Scaling(Input:= InputNum, Imin:= 0, Imax:= 32767, Qmin:= 0, Qmax:= 100);
+	Autonoom R= RemIngedrukt OR PercentagePedal > 10;
 END_IF
 
 fbReadXaxisStatus(
@@ -34,8 +40,11 @@ fbReadXaxisStatus(
 	movements();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="94" Count="0" />
+      <LineId Id="96" Count="0" />
       <LineId Id="64" Count="0" />
       <LineId Id="77" Count="0" />
+      <LineId Id="90" Count="0" />
       <LineId Id="71" Count="0" />
       <LineId Id="65" Count="0" />
       <LineId Id="38" Count="3" />

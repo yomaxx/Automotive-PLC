@@ -1599,7 +1599,6 @@ External Setpoint Generation:
 						<Name>PlcTask Inputs</Name>
 						<Var>
 							<Name>MAIN.InputNum</Name>
-							<Comment><![CDATA[voor inleen pedal]]></Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
