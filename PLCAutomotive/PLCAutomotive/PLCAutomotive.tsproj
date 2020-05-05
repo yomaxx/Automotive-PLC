@@ -1409,6 +1409,11 @@ External Setpoint Generation:
 	</ImageDatas>
 	<Project ProjectGUID="{D236F80B-8C0B-4C5D-B724-9A627390A74D}" Target64Bit="true" ShowHideConfigurations="#x106">
 		<System>
+			<Licenses>
+				<Target>
+					<ManualSelect>{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</ManualSelect>
+				</Target>
+			</Licenses>
 			<Tasks>
 				<Task Id="5" Priority="21" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
@@ -1598,7 +1603,7 @@ External Setpoint Generation:
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>MAIN.InputNum</Name>
+							<Name>peddal.InputNum</Name>
 							<Type>INT</Type>
 						</Var>
 						<Var>
@@ -1620,6 +1625,35 @@ External Setpoint Generation:
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>GVL_Lights.LightsFront</Name>
+							<Comment><![CDATA[	blinkLeft : BOOL;
+	blinkRight : BOOL;
+	lightFront : BOOL;
+	lightRear : BOOL;
+	lightBrake : BOOL;]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Lights.LightsRear</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Lights.LightsBrake</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Lights.LightsReverse</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Lights.BlinkerLeft</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Lights.BlinkerRight</Name>
+							<Type>BOOL</Type>
+						</Var>
 						<Var>
 							<Name>GVL_SAFETY.RestartSAFETY</Name>
 							<Type>BOOL</Type>
@@ -2054,6 +2088,7 @@ Bit1: Value bigger/equal Limit2]]></Comment>
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{05000010-2001-0850-1000-040300205008}" Id="#x02030010" Watchdog="14000000040000000400000004000000"/>
 		<OwnerA Name="TIID^EtherCat (EtherCAT)">
 			<OwnerB Name="TIID^EtherCat (EtherCAT)^Head Unit(EK1100)^Safety PLC (EL6900)">
 				<Link VarA="Head Unit(EK1100)^safety input (EL1904)^Module 1 (FSOES)^RxPDO^FSOE" VarB="ConnectionInputs^Message_2 TxPDO"/>
@@ -2065,6 +2100,10 @@ Bit1: Value bigger/equal Limit2]]></Comment>
 		<OwnerA Name="TIPC^Automotive^Automotive Instance">
 			<OwnerB Name="TIID^EtherCat (EtherCAT)^Head Unit(EK1100)^Safety PLC (EL6900)">
 				<Link VarA="PlcTask Outputs^GVL_SAFETY.RestartSAFETY" VarB="StandardOutputs^Standard In Var 1"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-SteeringAxis SAF^Axes^Axis 1">
+				<Link VarA="PlcTask Inputs^GVL_NC.stXAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_NC.stXAxis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

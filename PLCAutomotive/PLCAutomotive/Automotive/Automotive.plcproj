@@ -17,6 +17,9 @@
     <LibraryReferences>{1472e558-6dca-4f18-af39-362cac981faf}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Autonoom_POU\peddal.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\E_State.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -34,6 +37,10 @@
       <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="GVLs\GVL_IO.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_Lights.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
@@ -72,6 +79,9 @@
     <Compile Include="TCPIP_POU\FnR_Switch.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="TCPIP_POU\GetSpeedSteer.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="TCPIP_POU\Lights.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -90,7 +100,7 @@
     <Compile Include="VISUs\ImagePool.TcIPO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VISUs\Lights.TcVIS">
+    <Compile Include="VISUs\testLights.TcVIS">
       <SubType>Code</SubType>
       <DependentUpon>Visualization Manager.TcVMO</DependentUpon>
     </Compile>
@@ -103,6 +113,7 @@
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="GlobalPOUs" />
+    <Folder Include="Autonoom_POU" />
     <Folder Include="TCPIP_POU" />
     <Folder Include="VISUs" />
     <Folder Include="Motion_POUs" />
@@ -187,6 +198,11 @@
     <None Include="Automotive.tmc">
       <SubType>Content</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <LibraryReference Include="VisuSymbols,3.5.10.0,System">
+      <Namespace>VisuSymbols</Namespace>
+    </LibraryReference>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

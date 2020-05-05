@@ -1885,7 +1885,7 @@
                 <v n="VisualElementIdentifier">"GenElemInst_30"</v>
                 <n n="VisualElementOfflinePaintCommands" />
                 <n n="VisualElementFrameInformation" />
-                <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="IInputAction[]">
+                <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="InputBoxInputAction[]">
                   <v>OnMouseDown</v>
                   <a cet="InputBoxInputAction">
                     <o>
@@ -1932,8 +1932,8 @@
                 <v>1c0c7509-7d0a-4cd9-bf7c-9569fccba47a</v>
                 <v>ContainsPoint</v>
                 <v>84f0e113-2a41-4260-b73f-a2ab33de700d</v>
-                <v>HasInputAccess</v>
-                <v>696f34fb-7ddd-404a-a201-143cb1327aa2</v>
+                <v>SetStaticState</v>
+                <v>8a44cdeb-1d67-448e-8645-5fbbfd6d3bfd</v>
                 <v>HasInputAccessIntern</v>
                 <v>d0214df0-bcb1-43ac-84a2-1ff94e0a0986</v>
                 <v>GetTooltip</v>
@@ -1952,12 +1952,12 @@
                 <v>bcedc458-ba4b-4db7-8a9d-893f361c9eff</v>
                 <v>SetClientData</v>
                 <v>7f7f4df3-c396-4312-a08e-211bc7b3d37b</v>
-                <v>HasVisibilityAccessIntern</v>
-                <v>47a34d24-7a36-47f6-aad1-8be200bab565</v>
                 <v>GetInstance</v>
                 <v>389b62ec-3eb2-4bb6-a734-ba3816d26137</v>
                 <v>GetClientData</v>
                 <v>a91527e0-4e4b-4f21-8621-b02f08fba4b0</v>
+                <v>Destruct</v>
+                <v>2041aeb3-89a0-4a0f-b1c4-a949af72821e</v>
                 <v>Paint</v>
                 <v>52eb5235-362e-4a27-a75e-a32bd770cc4d</v>
                 <v>GetElementArray</v>
@@ -1972,10 +1972,10 @@
                 <v>e08c3c92-a19f-4f88-8cf1-14f070698ebf</v>
                 <v>Initialize</v>
                 <v>c76c76a4-8696-4560-92db-9df2766c06bf</v>
-                <v>Destruct</v>
-                <v>2041aeb3-89a0-4a0f-b1c4-a949af72821e</v>
-                <v>SetStaticState</v>
-                <v>8a44cdeb-1d67-448e-8645-5fbbfd6d3bfd</v>
+                <v>HasInputAccess</v>
+                <v>696f34fb-7ddd-404a-a201-143cb1327aa2</v>
+                <v>HasVisibilityAccessIntern</v>
+                <v>47a34d24-7a36-47f6-aad1-8be200bab565</v>
                 <v>GetSurroundingRect</v>
                 <v>cc4ec518-4f14-427c-951a-1789d11c72d1</v>
                 <v>GetResult</v>
@@ -2125,8 +2125,8 @@
         <Type n="Guid">System.Guid</Type>
         <Type n="Hashtable">System.Collections.Hashtable</Type>
         <Type n="HotkeyConfiguration">{6b108d46-58af-4e41-a3f4-174d8f160cc4}</Type>
-        <Type n="IInputAction[]">_3S.CoDeSys.VisualElem.IInputAction[], VisualElem, Version=3.5.13.0, Culture=neutral, PublicKeyToken=null</Type>
         <Type n="InputBoxInputAction">{e8e7e747-f76f-4dee-ab1c-b9637e41ac26}</Type>
+        <Type n="InputBoxInputAction[]">_3S.CoDeSys.VisualElem.InputBoxInputAction[], VisualElem.plugin, Version=3.5.13.30, Culture=neutral, PublicKeyToken=null</Type>
         <Type n="Int16">System.Int16</Type>
         <Type n="Int32">System.Int32</Type>
         <Type n="Int64">System.Int64</Type>
