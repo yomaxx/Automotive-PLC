@@ -9,13 +9,13 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//Program to select what direction the car should go
-IF RunTCP.sCommand = 'Forward' THEN
+IF RunTCP.sCommand = 'F' THEN //Forward mode
 	qFNR := TRUE;
 	qFNRDir := TRUE;
-ELSIF RunTCP.sCommand = 'Reverse' THEN
+ELSIF RunTCP.sCommand = 'R' THEN //Reverse mode
 	qFNR := TRUE;
 	qFNRDir := FALSE;
-ELSIF RunTCP.sCommand = 'Manual' THEN //supposed to be manual mode
+ELSIF RunTCP.sCommand = 'M' THEN //supposed to be manual mode
 	qFNR := FALSE;
 	qFNRDir := FALSE; //This one doesn't really matter
 END_IF]]></ST>

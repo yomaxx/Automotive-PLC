@@ -6,31 +6,32 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF RunTCP.sCommand = 'blon' THEN	//blinker left on
+      <ST><![CDATA[IF RunTCP.sCommand = 'BL1' THEN	//blinker left on	//These are connected to the blinker relay, so only high signal suffices
     GVL_Lights.BlinkerLeft    := TRUE;
     GVL_Lights.BlinkerRight   := FALSE;
-ELSIF RunTCP.sCommand = 'bloff' THEN	//blinker left off
+ELSIF RunTCP.sCommand = 'BL0' THEN	//blinker left off
     GVL_Lights.BlinkerLeft    := FALSE;
     GVL_Lights.BlinkerRight := FALSE;
-ELSIF RunTCP.sCommand = 'bron' THEN	//blinker right on
+ELSIF RunTCP.sCommand = 'BR1' THEN	//blinker right on
     GVL_Lights.BlinkerRight   := TRUE;
     GVL_Lights.BlinkerLeft    := FALSE;
-ELSIF RunTCP.sCommand = 'broff' THEN	//blinker right off
+ELSIF RunTCP.sCommand = 'BR0' THEN	//blinker right off
     GVL_Lights.BlinkerRight  := FALSE;
     GVL_Lights.BlinkerLeft   := FALSE;
-ELSIF RunTCP.sCommand = 'lon' THEN //lights on
+ELSIF RunTCP.sCommand = 'L1' THEN //lights on
 	GVL_Lights.LightsFront := TRUE;
 	GVL_Lights.LightsRear := TRUE;
-ELSIF RunTCP.sCommand = 'loff' THEN	//lights off
+ELSIF RunTCP.sCommand = 'L0' THEN	//lights off
 	GVL_Lights.LightsFront := FALSE;
 	GVL_Lights.LightsRear := FALSE;
-ELSIF RunTCP.sCommand = 'ron' THEN	//reverse light on
+	//TODO link to reverse
+(*ELSIF RunTCP.sCommand = 'ron' THEN	//reverse light on
 	GVL_Lights.LightsReverse := TRUE;
 ELSIF RunTCP.sCommand = 'roff' THEN	//reverse light off
-	GVL_Lights.LightsReverse := FALSE;
-ELSIF RunTCP.sCommand = 'bon' THEN	//reverse light on
+	GVL_Lights.LightsReverse := FALSE;*)
+ELSIF RunTCP.sCommand = 'B1' THEN	//brake light on
 	GVL_Lights.LightsBrake := TRUE;
-ELSIF RunTCP.sCommand = 'boff' THEN	//reverse light off
+ELSIF RunTCP.sCommand = 'B0' THEN	//brake light off
 	GVL_Lights.LightsBrake := FALSE;
 ELSE
     GVL_Lights.BlinkerRight := FALSE;
@@ -39,7 +40,9 @@ ELSE
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="Lights">
-      <LineId Id="6" Count="29" />
+      <LineId Id="6" Count="17" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="24" Count="11" />
       <LineId Id="5" Count="0" />
     </LineIds>
   </POU>
