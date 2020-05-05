@@ -20,14 +20,16 @@ Als je bij SAFETY gaat kijken vindt je de functies voor de noodknoppen. Wij hebb
 
 A function block for receiving and sending data using TF6310 TwinCAT TCP/IP Server.
 
-Usage
+- Usage
 Install TwinCAT
 Install Python3.
-Run the TwinCAT server program first.
-Run the client Python program.
+Run the TwinCAT program in PLCAutomotive.
+If using anything else than localhost on Microsoft Windows, add TCP port 24100 as exclusion in firewall (inbound and outbound)
+		https://answers.microsoft.com/en-us/windows/forum/all/adding-windows-firewall-exceptions/6e4578ae-420d-46a6-8bbc-3182b31e6ebd
+Run tcp_client.py using python3
 See commands.md for the available commands. TwinCAT will echo back all commands.
 
-How it works
+- How it works
 What's happening inside the function block FB_TcpServer:
 
 The function block FB_SocketConnect will open the socket at the specific port (in our example port:24100).
@@ -36,6 +38,3 @@ Every half a second, FB_SocketAccept will accept any incoming connection, and po
 The server program also expects a command from the client every 200ms, if no command is received in 200ms it is considered as disconnected.
 
 The function block FB_SocketSend and FB_SocketReceive use this 'hSocket' variable to send and receive data.
-State machine
-
-
