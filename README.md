@@ -1,4 +1,22 @@
-TwinCAT_TCP_IP_Server
+# Automotive-PLC
+
+Deze repository bevat het plc gedeelte van een gezamelijk project om een golfkart autonoom te laten rijden, de andere delen kun je hier vinden.
+  - Automotive2 : https://github.com/KingAbad/Autonomous_Cart_2
+  - Automotive-AI: "link"
+ 
+De bedoeling met dit project is om een kart autonoom mensen van de parkeerplaats naar hun werkplaats te brengen op onze campus.
+Hierboven kun je alle documentatie terugvinden om dit project zelf te maken.
+Daarlangs vindt je het twincat programma geschreven voor dit project met de volgende functies:
+
+- Motion
+In het motion gedeelte wordt een stepper motor aangestuurd voor het stuur, de opstelling hiervan is terug te vinden in de documentatie.
+Bij PLC kun je een visualisatie terugvinden om de werking te bekijken.
+
+- Twinsafe
+Voordat de kart kan bewegen moet de safety gereset worden. Hier hebben we een gewone drukknop op een normale ingang voor genomen. De safety zal de kart vrijgeven op een negatieve flank.
+Als je bij SAFETY gaat kijken vindt je de functies voor de noodknoppen. Wij hebben gekozen om 2 dubbele NC contact noodstoppen te voorzien. De twinsafe input stuurt elke paar ms omstebeurt bij elk contact een kleine puls en verwacht deze terug. als hij deze niet ziet zet hij de kart meteen stop. De twee contacten van elke noodstop zijn ook samen gegroepeerd zodat als er ergens een kabelbreuk is en maar 1 contact wegvalt  hij nogsteeds stopt en je kunt zien bij welke noodstop het probleem zich voordoet.
+
+- TwinCAT_TCP_IP_Server
 
 A function block for receiving and sending data using TF6310 TwinCAT TCP/IP Server.
 
