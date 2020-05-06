@@ -38,3 +38,5 @@ Every half a second, FB_SocketAccept will accept any incoming connection, and po
 The server program also expects a command from the client every 200ms, if no command is received in 200ms it is considered as disconnected.
 
 The function block FB_SocketSend and FB_SocketReceive use this 'hSocket' variable to send and receive data.
+
+![diagram project](Documentatie_Project/Schematic.png)
