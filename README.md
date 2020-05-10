@@ -22,11 +22,17 @@ A function block for receiving and sending data using TF6310 TwinCAT TCP/IP Serv
 
 - Usage
 Install TwinCAT
+
 Install Python3.
+
 Run the TwinCAT program in PLCAutomotive.
+
 If using anything else than localhost on Microsoft Windows, add TCP port 24100 as exclusion in firewall (inbound and outbound)
+
 		https://answers.microsoft.com/en-us/windows/forum/all/adding-windows-firewall-exceptions/6e4578ae-420d-46a6-8bbc-3182b31e6ebd
+		
 Run tcp_client.py using python3
+
 See commands.md for the available commands. TwinCAT will echo back all commands.
 
 - How it works
