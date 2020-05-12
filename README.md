@@ -5,7 +5,7 @@ De bedoeling met dit project is om een kart te maken die autonoom mensen van hun
 
 Deze repository bevat het plc gedeelte van een gezamelijk project om een golfkart autonoom te laten rijden, de andere delen kun je hier vinden.
   - Automotive2 : https://github.com/KingAbad/Autonomous_Cart_2
-  - Automotive-AI: "link"
+  - Automotive-PLC: https://github.com/yomaxx/Automotive-PLC
  
 Hierboven kun je alle documentatie terugvinden om dit project zelf te maken, een overzicht van de directories staat hieronder.
  
@@ -13,7 +13,7 @@ Hierboven kun je alle documentatie terugvinden om dit project zelf te maken, een
  ```
  Documentatie clubcart		directory met documentatie over de cart
  Documentatie project		directory met documentatie over het project
- PLCautomotive			directory met twincat programma
+ PLCAutomotive			directory met twincat programma
  ```
 
 ### Motion
@@ -29,17 +29,16 @@ Als je bij SAFETY gaat kijken vindt je de functies voor de noodknoppen. Wij hebb
 A function block for receiving and sending data using TF6310 TwinCAT TCP/IP Server.
 
 - Usage
-Install TwinCAT
 
-Install Python3.
-
-Run the TwinCAT program in PLCAutomotive.
-
-If using anything else than localhost on Microsoft Windows, add TCP port 24100 as exclusion in firewall (inbound and outbound)
-
-		https://answers.microsoft.com/en-us/windows/forum/all/adding-windows-firewall-exceptions/6e4578ae-420d-46a6-8bbc-3182b31e6ebd
+		-Video guide: https://www.youtube.com/watch?v=ATKTYQo91UY
+		-Install TwinCAT
+		-Install Python3.
+		-Run the TwinCAT program in PLCAutomotive.
+		-If using anything else than localhost on Microsoft Windows,
+			add TCP port 24100 as exclusion in firewall (inbound and outbound)
+			https://answers.microsoft.com/en-us/windows/forum/all/adding-windows-firewall-exceptions/6e4578ae-420d-46a6-8bbc-3182b31e6ebd
 		
-Run tcp_client.py using python3
+		-Run tcp_client.py using python3
 
 See commands.md for the available commands. TwinCAT will echo back all commands.
 
@@ -57,7 +56,7 @@ The function block FB_SocketSend and FB_SocketReceive use this 'hSocket' variabl
 
 ## Built with
 * *Twincat 3*
-* *python 3*
+* *Python 3*
 
 ## Authors
 
@@ -68,3 +67,4 @@ The function block FB_SocketSend and FB_SocketReceive use this 'hSocket' variabl
 * *Berkan Ipek* - Student
 
 ![Logo PXL](Documentatie_Project/pxl.png)
+
