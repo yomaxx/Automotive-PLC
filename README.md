@@ -1,3 +1,4 @@
+
 # Automotive-PLC
 
 ## algemene info
@@ -40,7 +41,7 @@ A function block for receiving and sending data using TF6310 TwinCAT TCP/IP Serv
 		
 		-Run tcp_client.py using python3
 
-See commands.md for the available commands. TwinCAT will echo back all commands.
+See [Commands.md](Commands.md) for the available commands. TwinCAT will echo back all commands.
 
 - How it works
 What's happening inside the function block FB_TcpServer:
