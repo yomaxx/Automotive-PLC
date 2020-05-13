@@ -1,0 +1,343 @@
+PCPS 1314 V4 Change Log
+------------------------
+
+Known Limitations:
+  -- PCPS can only install on Windows systems with a 'Western' OS locale/language (including enu/deu/ita/fra/esp) --
+
+
+** V4.6.7 (Build 467) **    [2014-09-03]
+
+Wheelchair controllers (enAble 50)
+- Added: New screen type (C2P) for Enhanced Display Remote-IR editor [OEM: OB].
+
+
+
+
+
+
+
+
+
+========= former releases =============
+
+** V4.6.5 (Build 465) **    [2014-07-07]
+MHE controllers / e40
+- Changed: general release with (limited) .PAR file cloning support.
+
+
+
+** V4.6.4 (Build 464) **    [2014-03-04]
+MHE controllers / e40
+- Fixed: Cloning of legacy .PAR files with display values out of range: allow display values as long as still within RAW data type range.
+
+
+** V4.6.3 (Build 463) **    [2014-01-31]
+General
+- Updated: Text updates only.
+
+
+** V4.6.2 (Build 462) **    [2013-12-02]
+General
+- Updated: Newer Windows drivers for the 1309 USB adapter.  (MS-WHQL for Windows 7+8 and 8.1; FTDI CDM v2.08.30)
+
+Wheelchair controllers (enAble 50 / MC-2)
+- Changed: Bug fixes and modification (IR Remote Editor) for AD (Q50).
+
+
+
+
+
+
+** V4.6.0 (Build 460) **    [2013-06-07]
+General
+- Added: The 'CANfox' CAN-USB adapter now is supported on Windows 8 using the integrated installer (CANfox_Installer_7v4_36)
+
+Wheelchair controllers (enAble 50 / MC-2)
+- Added: Support for new generation AD (Q50).
+
+
+
+** V4.5.0 (Build 450) **    [2012-12-17]
+
+Wheelchair controllers (enAble 50 / MC-2)
+- Added: Support for new generation HC (Q50).
+- Added: some ED models with Bluetooth (SW 4.xx) now supporting the ClickToPhone App.
+
+MHE controllers / e40
+- Fixed: allow raw value range of zero (rawMin==rawMax).
+- Changed: preliminary, allow legacy .PAR file cloning at level >= OEM.
+- Changed: error message and handling of ESP 'Invalid write' Acknowledge Byte.
+- Changed: min/max dependencies code.
+- Fixed: issue with 'HIGH PEDAL DIS' parameter on 1225 controllers.
+
+
+
+
+** V4.3.3 (Build 433) **    [2012-03-27]
+
+General
+- Added: 'OK' button to the 'About' screen.
+
+MHE controllers / e40
+- Legacy .PAR files are read-only; no editing, no saving, no cloning.
+- Legacy .PAR files: parameters do no longer show (wrong) dependencies in help text panel.
+- Legacy .PAR files: added some parameter verifications to detect corrupt files.
+- Added: dialog if an older 1309 USB adapter (FTDI) driver version (than the Curtis provided 2.8.2) is found.
+
+
+
+** V4.3.0 (Build 430) **    [2012-03-05]
+
+Wheelchair controllers (enAble 50 / MC-2)
+- Changed: For Remote-Control (IR) Editor, the CRC error dialog allows ignore button.
+
+MHE controllers / e40
+- Validated support for e40 and MHE with the ES and S protocols  (es_lib.dll 4.3.0).
+- Legacy .PAR files are supported as read-only and for preliminary cloning.
+
+
+
+** V4.2.9 (Build 390) **    [2012-02-20]
+
+Wheelchair controllers (enAble 50 / MC-2)
+- Changed: Updated text resources.
+
+** V4.2.9 (Build 384) **    [2012-02-17]
+
+MHE controllers / e40
+- Fixed: in some cases, raw value was not initiated at startup, but parameter gets pink when shown in tree due refresh (es_lib 4.2.49).
+- Changed: Legacy .PAR files supported as read-only and for cloning.
+- Added: Parameters with 'NoCloningAllowed' flag are now shown (like 1313) with i:  name prefix and help text info.
+
+** V4.2.9 (Build 380) **    [2012-02-03]
+
+Wheelchair controllers (enAble 50 / MC-2)
+- Added: Detection of en50 firmware test versions.
+
+MHE controllers / e40
+- Changed: S protocol, no rounding for DispMin calculation, just do step alignment (es_lib 4.2.48).
+
+
+
+
+** V4.2.7 (Build 372) **    [2011-12-16]
+
+Wheelchair controllers (enAble 50 / MC-2)
+- Added: New screen type (PS) for Enhanced Display Remote-IR editor.
+
+MHE controllers / e40
+- the ES protocol is supported for enable40 systems only.
+- All other ES and S protocols (MH) are still subject to some changes, unsupported for this PCPS build!
+- Changed: S-protocol timeouts + priority  (es_lib 4.2.47)
+- Added: Warning dialog if 1309 USB adapter latency time > 2msec.
+
+
+
+** V4.2.6 (Build 366) **    [2011-11-25]
+
+MH controllers / e40
+- Changed: S-protocol new math for step alignment  (es_lib 4.2.46)
+- Changed: ES+S, new dialog for out of range handling; now only shown when selecting parameter in menu.
+
+
+** V4.2.6 (Build 361) **    [2011-11-15]
+
+MH controllers / e40
+- Fixed: enable40 systems, diagnostics view - 'Active Faults' list showing additional (inactive) entries.
+
+
+** V4.2.6 (Build 360) **    [2011-11-04]
+
+General
+- improved system powerdown handling (lockups).
+- changed settings and UI for backups while cloning.
+- HW version is shown on the Firmware Update screen.
+- changed the reporting of issues (added/removed items) after cloning.
+
+MH controllers / e40
+- the ES protocol is supported for enable40 systems only.
+- All other ES and S protocols (MH) are still subject to some changes, unsupported for this PCPS build!
+
+
+** V4.2.3 (Build 338) **    [2011-07-19]
+
+General
+- Text updates.
+
+Wheelchair controllers (enAble 50 / MC-2)
+- Fixed: versioning issues with Enhanced Display Remote-IR editor.
+- Fixed: icon overlay text limitations to max 127 (else warning will be shown).
+
+
+** V4.2.2 (Build 335/336) **    [2011-06-22]
+
+General
+- Changed: UI text corrections; More space for foreign languages on some controls.
+- Fixed: exception if help text is missing ASCII CR+LF line terminator.
+
+Wheelchair controllers (enAble 50 / MC-2)
+- Added: ED Remote control icon editor plugin.
+
+
+** V4.2.1 (Build 329) **    [2011-05-20]
+
+General
+- Added: When cloning, the parameter value range check is now done after a required power cycle.
+- Added: The cloning selection dialog provides a new option to create a backup file.
+    After the cloning, a new menu option allows to restore this backup and thus revert to former state (rollback).
+- Added: When saving program as CPF, the dialog allows to change the file mask to *.*
+- Changed: System requirements to exclude Windows 2000.
+- Changed: when printing .PAR files, the option "Program Data (Raw values)" is no longer provided.
+- Changed: renamed view ‘Edit Program’ to ‘Parameters’  (same as 1313).
+- Changed: parameter value range checking also for table view; corrected handling dialog.
+- Fixed: Issues in communication settings dialog with detection of uninstalled drivers and high COM port numbers.
+- Installer: selection of USB drivers.
+
+Wheelchair controllers (enAble 50 / MC-2)
+- Changed: Improved actuator configuration dialog, allow simple Html export.
+- Fixed: device of same type are now shown with a name prefix (node ID, serials).
+- Fixed, for parameters in table view, the MDOs are now respected, thus some entries hidden.
+- Fixed: When changing any Mapped Outputs, PCPS now asks for system IDLE mode.
+- Fixed: issues in IR remote editor.
+
+MH controllers / e40
+- Fixed: Menu merging (leafs with same name on same device),  e.g. the ‘VCL’ +‘OS’ menus.
+
+
+
+** V4.2.0 (Build 310) **
+
+General
+- Changes: prevent merging of OS and VCL menues with same node name on same device (2626, 2513).
+- Minor bug fixes (001278, 002546)
+
+
+** V4.2.0 (Build 301) **
+
+General
+- Added: Support of new CAN/Serial interface
+- Added: 1309 USB support. Only 1309 USB is supported anymore
+- Added: Maximum access level protection saved in 1309 USB interface
+- Added: Scrollbar to help text
+- Added: Show a list of paths where the same parameter can show up at different places in the tree
+- New: For web update a communication interface must be connected
+
+Wheelchair controllers (enAble 50 / MC-2)
+- Added: Cache files are rebuilt automatically when newer global text files are present.
+- Added: During cloning all parameters which are superfluous or missing are now listed and can be exported to a HTML file.
+- Removed: Backup/Restore function was removed.
+
+MH controllers / e40
+- Removed multiconfig cloning
+- Added: ES protocol shows now help text in Offline mode (if available)
+- Bug fix: ES_lib is now running with latest FDTI USB driver
+- Bug fix: PIP Header infos are now showed correctly when maximum text length is used.
+
+
+** V4.1.0 (Build 529) **
+
+General
+- Minor bug fixes	
+
+Wheelchair controllers
+- Added: Better communication support when running on slow PC
+
+
+
+** V4.1.0 (Build 527) **
+
+General
+- Added: Installer now installs MTAPI for Windows 2000 and XP, too	
+- Added: Read/Write access level of a parameter is now contained
+  in program export file	
+- Improvement: Stop update thread during saving to file	
+- Bug fix: Check if focus can be set prior to setting it	
+- Bug fix: Removed memory leaks	
+- Added: Check if leaf nodes in the menu already exist. If yes,
+  append node id to the menu name to be able to distinguish the menu.	
+- Added: MRU support when loading file from second instance
+  (double click in Windows Explorer)	
+- Added: Do not show menu entries in menu tree when display as table view.	
+- Added: Now the filename is also added to MRU when loading by command line	
+- Bug fix: Table view parameters are now exported and printed correctly	
+- Bug fix: Adjust limits after cloning 	
+- Added: Check if parameter is in valid range every time when user clicks on parameter	
+- Changed: Automatic check if parameter is outside valid range 
+  only in developer edition anymore	
+- Items in default access level combobox in the settings dialog depends 
+  now on the specific edition of the 1314	
+- Added new sorting of watchlist. Sort order is now the position in menu tree.	
+- Added online help file for all 5 languages	
+- Added showing all limiting parameter	
+- Added sorting of Error Histroy by timestamp if date code is the same in print out	
+- Added support for "OEMData" copy to install dir	
+- Added update thread feature to update changes of values	
+- Added: Show all dependencies and display the active one in a different color.	
+- Autosave programs are now saved in 'my documents' area of windows.
+  Vista does not allow to write in program files area.	
+- Bug fix: Change color of parameter tree if value changed	
+- Bug fix: If no com port is present on the PC then no error occurs anymore 
+- Show IME hardware selection only when IME driver is installed	
+- Bug fix: Now the height of dependency list labels is calculated correctly.	
+- Bug fix: Only start updateThread when object exist (e.g. offline system)	
+- Bug fix: Removed exception when no COM port exists in the system	
+- Bug fix: Set OEMData source files as optional	
+- Bug fix: Set visible of action items	
+- Changed 'device software' path to my doc directory, due to writing
+  rights limitation under Windows Vista	
+- Changed path for OEMData to be Vista compatible	
+- Minor bug fixes	
+
+
+Wheelchair controllers
+- Added: Support for Binary Menu Display Options (MDO)	
+- Added: When setting default value, it's checked if within min/max range	
+- Bug fix: Fault entry structure had wrong data type	
+- Bug fix: Due to bus overload en error #2 occurred on HC after some time	
+- Added: System properties are now imported when importing master device	
+- Added: Added for battery statistic view (not supported by all Powerbase)	
+- Added: Support of data sections for MC-2 system	
+- Changed: When parameter value is out of range with MCP, then it's set 
+  it to its default.	
+- Changed: Incremented Firmware update timeout to support 8MB flash	
+- Changed: Refresh timing improvement when switching off system	
+- Bug fix: Works now correctly with I+ME PCI card	
+- Bug fix: When reading from cache file, the device number in output 
+  items was not set to actual device number.	
+- Bug fix: Reset "ShowAllParameter" state when connecting to a system	
+- Bug fix: Only clone data sections which are present in the destination system.	
+- Bug fix: "Devicenumber" was get with wrong index.	
+- Added some checks to prevent impossible configurations in AAM configuration dialog	
+- Added some waiting time after saving config data to allow devices to save it into eeprom.	
+- Added waiting time to prevent error #2 on device	
+- Bug fix: Check for already used actuators now works correctly	
+- Bug fix: Do not display lastest SW version when connected to a MC-2 system	
+- Bug fix: Save the data length before sending the semaphore token. The length 
+  member in SDO struct will be initialized to 0 by waiting task and therefore a 
+  wrong value was returned as length.	
+- Changed images of N.O./N.C. MIO	
+- Changed menu priority of root menu for MC-2. Device config is now at 
+  the same position as e50	
+- Check if data are refreshed in a online system when retrieving config data	
+- New texts	
+
+
+Material Handling controllers
+- Bug fix: Cloning from .PAR files now works correctly	
+- Bug fix: When multi configuration is present, now values of all configurations
+  are updated prior to saving a file	
+- Bug fix: Advanced cloning is not allowed for SERIAL protocol	
+- Bug fix: Now COM ports > COM9 can be used.	
+- Added additional infos to create cache file name with S protocol	
+- Added exponent normalization when using dependency parameters	
+- Added improvements for S protocol controller support	
+- Bug fix: Added exponent normalization when using dependency parameters.	
+- Bug fix: Dependencies are now working correctly with S protocol	
+- Bug fix: Dependencies for ES/S are now handled correct	
+- Bug fix: Reset dependencies in case it already exists from a 
+  previous parsing (e.g. P or Q command)	
+- Bug fix: S protocol uses now AltAddress as ID - Added support for write protection with S protocol	
+ 
+
+
+(c) Curtis Instruments, www.curtis.ch
