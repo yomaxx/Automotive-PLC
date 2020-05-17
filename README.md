@@ -2,9 +2,9 @@
 # Automotive-PLC
 
 ## General information
-The goal of this project is to rebuild a old golf cart so it can drive people from the parking to their working space around our campus.
+The goal of this project is to rebuild an old golf cart so it can drive people from the parking to their working space around our campus autonomously.
 
-This repository contains the PLC part of the joint project to get the golfcart to drive autonomous. The other two parts can be found in the repositories below.
+This repository contains the PLC part of the joint school project to build a golfcart. The other two parts can be found in the repositories below.
   - Automotive2 	: https://github.com/KingAbad/Autonomous_Cart_2
   - Automotive-AI 	: https://github.com/randomRexx/ADAS_AI_cart
  
@@ -16,7 +16,7 @@ This repository contains the PLC part of the joint project to get the golfcart t
  ```
 
 ### Motion
-In order for the cart to drive itself it needs to be able to steer itself. This is done by attaching a stepper motor to the steering mechanism. The scematics that show the construction can be found in the project directory. Ai team will send a steer and degree string that the twincat motion program will pick up and execute.
+In order for the cart to drive on its own it needs to be able to steer. This is done by attaching a stepper motor to the steering mechanism. The schematics that show the construction can be found in the project directory. Ai team will send a steer and degree string that the twincat motion program will pick up and execute.
 We also measure the amperage the motor takes to see if the driver onboard is steering, if this is the case the cart will stop driving autonomous and the driver can take over.
 
 ### Twinsafe
