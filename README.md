@@ -1,29 +1,26 @@
 
 # Automotive-PLC
 
-## algemene info
-De bedoeling met dit project is om een kart te maken die autonoom mensen van hun parkeerplaats naar hun werkplaats te brengen op onze campus.
+## General information
+The goal of this project is to rebuild a old golf cart so it can drive people from the parking to their working space around our campus.
 
-Deze repository bevat het plc gedeelte van een gezamelijk project om een golfkart autonoom te laten rijden, de andere delen kun je hier vinden.
-  - Automotive2 : https://github.com/KingAbad/Autonomous_Cart_2
-  - Automotive-PLC: https://github.com/yomaxx/Automotive-PLC
- 
-Hierboven kun je alle documentatie terugvinden om dit project zelf te maken, een overzicht van de directories staat hieronder.
+This repository contains the PLC part of the joint project to get the golfcart to drive autonomous. The other two parts can be found in the repositories below.
+  - Automotive2 	: https://github.com/KingAbad/Autonomous_Cart_2
+  - Automotive-AI 	: https://github.com/randomRexx/ADAS_AI_cart
  
  ## source roadmap
  ```
- Documentatie clubcart		directory met documentatie over de cart
- Documentatie project		directory met documentatie over het project
- PLCAutomotive			directory met twincat programma
+ Documentatie clubcart		directory with documentation of the cart
+ Documentatie project		directory with documentation about the project
+ PLCAutomotive			directory that contains the twincat program
  ```
 
 ### Motion
-In het motion gedeelte wordt een stepper motor aangestuurd voor het stuur, de opstelling hiervan is terug te vinden in de documentatie.
-Bij PLC kun je een visualisatie terugvinden om de werking te bekijken.
+In order for the cart to drive itself it needs to be able to steer itself. This is done by attaching a stepper motor to the steering mechanism. The scematics that show the construction can be found in the project directory. Ai team will send a steer and degree string that the twincat motion program will pick up and execute.
+We also measure the amperage the motor takes to see if the driver onboard is steering, if this is the case the cart will stop driving autonomous and the driver can take over.
 
 ### Twinsafe
-Voordat de kart kan bewegen moet de safety gereset worden. Hier hebben we een gewone drukknop op een normale ingang voor genomen. De safety zal de kart vrijgeven op een negatieve flank.
-Als je bij SAFETY gaat kijken vindt je de functies voor de noodknoppen. Wij hebben gekozen om 2 dubbele NC contact noodstoppen te voorzien. De twinsafe input stuurt elke paar ms omstebeurt bij elk contact een kleine puls en verwacht deze terug. als hij deze niet ziet zet hij de kart meteen stop. De twee contacten van elke noodstop zijn ook samen gegroepeerd zodat als er ergens een kabelbreuk is en maar 1 contact wegvalt  hij nogsteeds stopt en je kunt zien bij welke noodstop het probleem zich voordoet.
+Before the cart can drive autonomous the reset needs to pushed, this needs to be done every startup or after a emergystop has been pressed. If you open the twincat program and look under safety you will find the code for the emergency buttons. The cart has two buttons that both contain 2 NC contacts. in the code you can see that there are 2 groups of 2 contacts. The twinsafe input terminal has 4 inputs which all have a plus and minus plug. The input terminal will take turn in sending a small puls to every plus plug to check if the emergency stop has been pressed. If a contact doesn't return the puls the safety plc will stop the cart. This way you can also see the diffrence between a buttoin press or if a cable is broken as only one of the 2 contacts of a button will not return the puls.
 
 ### TwinCAT_TCP_IP_Server
 
