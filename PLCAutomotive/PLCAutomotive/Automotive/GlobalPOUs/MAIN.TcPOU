@@ -23,6 +23,7 @@ fbReadXaxisStatus(
 	Homing=> , ConstantVelocity=> , 
 	Accelerating=> , Decelerating=> , 
 	Status=> GVL_NC.stXaxisStatus);
+	
 	POUNCPowerOn();
 	movements();]]></ST>
     </Implementation>
@@ -36,7 +37,9 @@ fbReadXaxisStatus(
       <LineId Id="50" Count="0" />
       <LineId Id="52" Count="0" />
       <LineId Id="54" Count="0" />
-      <LineId Id="56" Count="2" />
+      <LineId Id="56" Count="1" />
+      <LineId Id="156" Count="0" />
+      <LineId Id="58" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
